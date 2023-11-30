@@ -5,6 +5,7 @@ import dotenv from "dotenv"
 import authRoute from "./routes/authRoute.js"
 import userRoute from "./routes/userRoute.js"
 import resourceRoute from "./routes/resourceRoute.js"
+import cookieParser from "cookie-parser"
 
 
 
@@ -12,6 +13,7 @@ const app=express()
 dotenv.config()
 
 app.use(express.json())
+app.use(cookieParser())
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({extended:true}))
 
