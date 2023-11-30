@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <title>Space</title>
+</head>
+
+<body>
+  <div class="container" id="container">
+    <div class="form-container sign-up-container">
+      <form action="" method="post">
+        <h2>Sign Up</h2>
+        <input type="text" id="name" name="Username" placeholder="Name" required>
+        <input type="text" id="username" placeholder="Enter your Username " required>
+        <input type="email" id="Email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <button class="sign-up">Sign Up</button>  
+      </form>
+    </div>
+
+    <div class="form-container sign-in-container">
+      <form action="" method="post">
+        <h2>Sign In</h2>
+        <input type="email" id="Email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <button class="sign-in">Sign in</button> 
+        <a href="#" id="newToSpace">New to Space?</a>
+      </form>
+    </div>
+
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel panel-left">
+          <h2>Welcome Back </h2>
+          <span>Enter your details dear Spacer!</span>
+          <button class="login" id="login">Sign in</button>
+        </div>
+
+        <div class="overlay-panel panel-right">
+          <h2>Hello, Friend!</h2>
+          <span>Register to enjoy the sites benefits</span>
+          <button class="login" id="register">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
