@@ -2,10 +2,16 @@ import express from "express"
 import bodyParser from "body-parser"
 import mongoose from "mongoose"
 import dotenv from "dotenv"
+import authRoute from "./routes/authRoute.js"
+import userRoute from "./routes/userRoute.js"
+import resourceRoute from "./routes/resourceRoute.js"
+
 
 
 const app=express()
 dotenv.config()
+
+app.use(express.json())
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({extended:true}))
 
@@ -24,3 +30,18 @@ mongoose.connect(MONGODB_URI)
 app.get("/",(req,res)=>{
     res.render("index.ejs")
 })    
+
+app.use("/auth", authRoute)
+app.use("/users", userRoute)
+app.use("/resources", resourceRoute)
+
+app.use((err,req,res,next)=>{
+    const status = err.status || 500
+    const message = err.message || "Something went wrong!"
+
+    return res.status(status).json({
+        successful:false,
+        status,
+        message
+    })
+})
