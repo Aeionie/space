@@ -5,13 +5,17 @@ const resourceSchema= new mongoose.Schema({
         type:String,
         required:true
     },
-    courseCode:{
+    resourceName:{
         type:String,
         required:true
     },
-    department:{
+    category:{
         type:String,
         require:true
+    },
+    privacy:{
+        type:String,
+        required:true,
     },
     userId:{
         type:String,

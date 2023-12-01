@@ -5,11 +5,17 @@ import { createError } from "../middleware/error.js"
 
 
 export const loadAuthPage=async(req,res)=>{
-    res.render("form.ejs")
+    if(req.cookies.access_token){
+        res.redirect("/")
+    }else{
+        res.render("auth.ejs")
+    }
 }
 
 export const signin=async(req,res,next)=>{
     const {email}=req.body
+    console.log(email)
+    console.log(req.body.password)
     try {
         const foundUser= await userModel.findOne({email})
         console.log(foundUser)
@@ -25,7 +31,7 @@ export const signin=async(req,res,next)=>{
 
         res.cookie("access_token",token,{
             httpOnly:true
-        }).json(others)
+        }).redirect("/")
         
     } catch (err) {
         next(createError(err))
@@ -52,15 +58,21 @@ export const signup=async(req,res,next)=>{
         
         const token= jwt.sign({id:others._id},process.env.JWT_TOKEN)
 
-        console.log(token)
+        //console.log(token)
 
         res.cookie("access_token",token,{
             httpOnly:true
-        }).json(others)
+        }).redirect("/")
         
     } catch (err) {
         next(createError(err))
         
         
     }
+}
+
+export const signout=async(req,res,next)=>{
+    res.clearCookie("access_token",{
+        httpOnly:true
+    }).redirect("/")
 }
