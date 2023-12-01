@@ -21,6 +21,8 @@ const userSchema= new mongoose.Schema({
     },
     profilePicUrl:{
         type:String,
+        required:true,
+        default:"https://res.cloudinary.com/djlvd6m7k/image/upload/v1697783978/starnode/hgaa6bwop01bwihwsr1k.jpg"
     },
     resourceUploaded:{
         type:[String]

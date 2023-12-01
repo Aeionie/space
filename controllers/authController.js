@@ -19,11 +19,18 @@ export const signin=async(req,res,next)=>{
     try {
         const foundUser= await userModel.findOne({email})
         console.log(foundUser)
-        if(!foundUser) return next(createError(404, "User not found!"))
+        if(!foundUser){
+            const error="User not found!"
+            res.render("auth.ejs")
+        } 
         const isCorrect=bcrypt.compare(req.body.password, foundUser.password)
         console.log(foundUser.password)
     
-        if(!isCorrect) return next(createError(404,"Incorrect Password"))
+        if(!isCorrect){
+            const error="Incorrect Password"
+            res.render("auth.ejs", {error})
+        } 
+        //return next(createError(404,"Incorrect Password"))
     
         const token= jwt.sign({id:foundUser._id},process.env.JWT_TOKEN)
 
