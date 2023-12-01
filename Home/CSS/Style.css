@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Noto+Sans+JP:wght@600&family=Poiret+One&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Noto+Sans+JP:wght@600&family=Poiret+One&family=Poppins:wght@200;300;400;500;600;700;800&family=Yanone+Kaffeesatz:wght@300;400;600;700&display=swap');
+
+/* font-family: 'Lato', sans-serif;
+font-family: 'Noto Sans JP', sans-serif;
+font-family: 'Poiret One', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
+:root {
+  --red: #f80909;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  transition: all .3s cubic-bezier(.16, .8, .62, 1.52);
+  outline: none;
+  text-transform: capitalize;
+}
+
+*::selection {
+  background-color: var(--red);
+  color: #fff;
+}
+
+html {
+  font-size: 50%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 1.3rem;
+
+}
+
+html::-webkit-scrollbar-track {
+  background: #000;
+
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--red);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* header starts */
+header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  z-index: 1000;
+  height: 60px ;
+  padding: .1rem 2rem .1rem 2rem;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+  border-radius: .5rem;
+
+}
+
+.main-container {
+  padding-top: 100px;
+  padding-left: 96px;
+  margin: 0;
+  padding-right:24px ;
+}
+
+.middle-section{
+  display: flex;
+  flex:1;
+  margin-left:70px;
+  margin-right: 35px;
+  display: flex; 
+  max-width:500px ;
+  align-items: center;
+  justify-content: center;
+}
+  
+
+
+header input {
+  width: 100%;
+  height: 40px;
+  border-width:1px;
+  border-style: solid;
+  border-radius: 2px;
+  border-style:rgb(233, 231, 231);
+  border-radius: inset 1px 2px 3px rgba(0,0,0,0.05);
+}
+input::placeholder{
+  text-align: left;
+  padding: 3px 7px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-size: 16px;
+
+}
+
+.icon {
+  font-size: 20px;
+}
+.search-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(252, 241, 241);
+  font-size: 21px;
+  height: 40px;
+  border-width: 1px;
+  border-style:solid ;
+  background-color:rgb(240,240,240);
+  border-color: 1px solid rgb(192, 192, 192);
+  width:60px;
+
+}
+
+
+
+.right-section {
+  display: flex;
+  align-items: center;
+  width:180px;
+  margin-right: 24px;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.bell-icon{
+  font-size:24px;
+}
+.uplaod-icon:first-child {
+  font-size: 24px;
+  margin: 0 4rem;
+}
+
+
+.profile-pfp {
+  margin: 0 0 0 2rem;
+  border-radius: 20px;
+  height: 32px;
+}
+
+img {
+  border-radius: 5px;;
+  width: 100%;
+  height: 100%;
+}
+
+/* header input{
+  /* display: none; }*/
+
+
+header .logo {
+  color: #333;
+  font-size: 3.8rem;
+  font-weight: 600;
+  margin: 2rem;
+}
+
+header .logo span {
+  color: var(--red);
+}
+
+header nav ul {
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+
+header nav ul li {
+  margin: 0 1rem;
+}
+
+
+header nav ul li a {
+  font-size: 2.3rem;
+  color: #333;
+}
+
+header nav ul li a:hover {
+  color: var(--red);
+}
+
+header #menu {
+  display: none;
+  color: #666;
+  cursor: pointer;
+}
+
+header .container {
+  display: none;
+}
+
+header .close {
+  display: none;
+}
+
+/* header ends */
+
+
+/* nav stars*/
+.side-bar {
+  position: fixed;
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top:55px;
+  width: 82px;
+  z-index:200;
+  padding-top:5px; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-link {
+  margin-top: 13px ;
+  height: 74px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 4rem;
+  cursor: pointer;
+  transition: transform .1s linear ;
+  
+}
+
+/* i{
+  transition: transform .1s linear ;
+}
+i:hover{
+  transform: scale(1.1);
+} */
+
+.sidebar-link:hover {
+  transform: scale(1.1);
+  background-color: #ffff;
+}
+.sidebar-link div{
+  font-family: Roboto, Arial;
+  font-size: 15px;
+}
+
+/* nav ends */
+
+
+/* grid starts */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.zone {
+  font-size: 10em;
+  text-align: center;
+  border: 3px solid #bbb;
+  border-radius: 4%;
+  transition: all 0.4s linear;
+}
+
+.zone:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 50px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 50px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  -o-box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 50px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 50px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  transform: scale(1.1);
+}
+
+/* grid ends */
+/* Footer ends */
+
+
+
+/*media Queries*/
+
+@media (max-width:991px) {
+  html {
+    font-size: 45%;
+
+  }
+  .main-container{
+    padding-left: 10rem;
+  }
+
+  .about .container {
+    margin: 5rem;
+    padding-top: 2rem;
+    text-align: center;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+  }
+
+  .movies .container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+/* ... (your existing styles) */
+
+/* Right section for larger screens */
+.right-section {
+  display: flex;
+  align-items: center;
+  width: 180px;
+  margin-right: 24px;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+/* Existing styles ... */
+
+/* Right section for larger screens */
+.right-section {
+  display: flex;
+  align-items: center;
+  width: 180px;
+  margin-right: 24px;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+/* Existing styles ... */
+
+/* Right section for larger screens */
+.right-section {
+  display: flex;
+  align-items: center;
+  width: 180px;
+  margin-right: 24px;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+/* Right section for smaller screens (initially hidden) */
+.right-section-small {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px;
+  font-size: 24px; /* Adjust the font size as needed */
+}
+
+/* ... (your existing styles) */
+
+/* Add a media query for viewport width 768px and below */
+@media (max-width: 768px) {
+  .main-container {
+    padding-top: 2rem;
+  }
+
+  /* Hide the right section for larger screens when the viewport is 768px and below */
+  .right-section {
+    display: none;
+  }
+
+  .right-section-small {
+    display: flex; /* Show the right section for smaller screens */
+  }
+
+  /* Other styles in your CSS file remain unchanged */
+}
+
+
+
+@media (max-width:768px) {
+  .main-container{
+    padding-top:2rem  ;
+  }
+  header #menu {
+    font-size: 3rem;
+    display: block;
+    color: #666;
+    cursor: pointer;
+  }
+
+
+  header .navbar {
+    position: fixed;
+    top: 101%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+  }
+
+  header .navbar ul {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 1rem 0;
+    padding: 1rem .1rem;
+  }
+
+
+
+  header .navbar ul li {
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 1.1rem 0 1.1rem 1.7rem;
+    margin: .1rem;
+    width: 100%;
+  }
+
+  header .navbar ul li a {
+    display: block;
+    padding: 1rem 0;
+    border-bottom: .1rem solid rgba(0, 0, 0, .1);
+  }
+
+  header .navbar ul li a:hover {
+    color: #d10c0c;
+  }
+
+  .fa-times {
+    transform: rotate(180deg);
+  }
+
+  header .navbar.active {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  .main-container{
+    position:relative;
+  }
+
+
+
+  /* right section ends */
+  section {
+    padding: 10rem 7% .1rem 7%;
+  }
+
+  section .content {
+    text-align: center;
+  }
+
+  section .content h3 {
+    font-size: 2rem;
+  }
+
+  section .content h1 {
+    font-size: 5rem;
+    line-height: 6rem;
+  }
+
+  section .content p {
+    font-size: 2rem;
+  }
+
+  .about .container {
+    padding-top: 2rem;
+    text-align: center;
+  }
+
+  
+  #menu{
+    display:block;
+  }
+ /* Add these styles for the sidebar */
+/* Update these styles for the sidebar */
+.side-bar {
+  position: fixed;
+  top: 60px; /* Adjust this value based on your header height */
+  left: 0;
+  width: 100%;
+  height: 0; /* Set initial height to 0 */
+  overflow: hidden;
+  background-color: #fff; /* Adjust background color as needed */
+  transition: height 0.3s ease; /* Smooth transition effect for height */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Add styles for the 'active' class to expand the sidebar */
+.side-bar.active {
+  height: calc(100vh - 60px); /* Adjust the height to fill the remaining viewport height */
+}
+
+Other styles in your CSS file remain unchanged
+
+
+}
+
