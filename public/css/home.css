@@ -55,6 +55,7 @@ html::-webkit-scrollbar-thumb {
 body {
   width: 100%;
   min-height: 100vh;
+  position: relative;
 }
 
 /* header starts */
@@ -267,24 +268,114 @@ i:hover{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 10px;
+  
 }
 
-.zone {
-  font-size: 10em;
-  text-align: center;
-  border: 3px solid #bbb;
-  border-radius: 4%;
+.file-container {
+  width: 300px;
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px;
+  border-radius: 10px;
   transition: all 0.4s linear;
 }
 
-.zone:hover {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 50px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 50px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
-  -o-box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 50px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
-  box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 50px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
-  transform: scale(1.1);
+.file-container:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 25px, inset rgba(0, 0, 0, 0.15) 0px -10px 10px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 25px, inset rgba(0, 0, 0, 0.15) 0px -10px 10px;
+  -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 25px, inset rgba(0, 0, 0, 0.15) 0px -10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 25px, inset rgba(0, 0, 0, 0.15) 0px -10px 10px;
+  transform: scale(1.02);
 }
 
+.file-container>h1{
+
+}
+#secs{
+  width: "100%";
+}
+.image-container{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  border-radius: 5px;
+}
+
+.image-container>img{
+  width: 50%;
+  height: 80%;
+}
+
+.profilePic{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.authDetails{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.profileContainer{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fa-download{
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid rgba(128, 128, 128, 0.323);
+  border-radius: 50%;
+}
+.authDetails>p{
+  color: #666;
+}
+
+
+
+
+#post-page{
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top:0%;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #00000063;
+}
+
+#model{
+  position: relative;
+  width:60%;
+  height: 60%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#close{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  top: 7%;
+  right: 5%;
+  border:1px solid black;
+  padding: 10px;
+  border-radius:50%;
+
+}
 /* grid ends */
 /* Footer ends */
 
@@ -298,20 +389,20 @@ i:hover{
 
   }
   .main-container{
-    padding-left: 10rem;
+    padding-left: 0;
   }
 
   .about .container {
     margin: 5rem;
     padding-top: 2rem;
     text-align: center;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); */
 
   }
 
-  .movies .container {
+  /* .movies .container {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
+  } */
 }
 /* ... (your existing styles) */
 
@@ -452,7 +543,9 @@ i:hover{
 
   /* right section ends */
   section {
-    padding: 10rem 7% .1rem 7%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10rem;
   }
 
   section .content {

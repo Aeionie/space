@@ -6,7 +6,7 @@ import { createError } from "../middleware/error.js"
 
 export const loadAuthPage=async(req,res)=>{
     if(req.cookies.access_token){
-        res.redirect("/")
+        res.redirect("/resources")
     }else{
         res.render("auth.ejs")
     }
@@ -21,7 +21,7 @@ export const signin=async(req,res,next)=>{
         console.log(foundUser)
         if(!foundUser){
             const error="User not found!"
-            res.render("auth.ejs")
+            res.render("../auth.ejs")
         } 
         const isCorrect=bcrypt.compare(req.body.password, foundUser.password)
         console.log(foundUser.password)
@@ -36,9 +36,13 @@ export const signin=async(req,res,next)=>{
 
         const {password,...others}=foundUser._doc
 
+        //localStorage.setItem("userData",JSON.stringify(others))
+
         res.cookie("access_token",token,{
             httpOnly:true
-        }).redirect("/")
+        }).cookie("userData",JSON.stringify(others),{
+            httpOnly:true
+        }).redirect("/resources")
         
     } catch (err) {
         next(createError(err))
@@ -69,7 +73,7 @@ export const signup=async(req,res,next)=>{
 
         res.cookie("access_token",token,{
             httpOnly:true
-        }).redirect("/")
+        }).redirect("/resources")
         
     } catch (err) {
         next(createError(err))

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Document</title>
+</head>
+
+
+
+<body>
+  <!-- Header section -->
+  <div id="post-page">
+    <div id="model">
+      <div id="close">
+        <h1>X</h1>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="main-container">
+    <header>
+      <!-- <input type="checkbox" id="check"> -->
+      <div class="left-section">
+        <a href="#" class="logo">Space</a>
+      </div>
+      <!-- Menu button -->
+      <!-- i made use of div here  -->
+      <div class="middle-section">
+        <input type="search-bar" placeholder="search">
+        <div class="search-button"><i class="fa-solid fa-magnifying-glass"></i></div>
+      </div>
+
+
+      <div class="right-section">
+        <div class="uplaod-icon add-resources"><i class="fa-solid fa-upload"></i></div>
+        <div class="bell-icon"><i class="fa-solid fa-bell"></i></div>
+        <div class="profile-pfp"><img src=<%= locals.userData.profilePicUrl %> alt="profile-picture"></div>
+      </div>
+      <% console.log(locals) %>
+
+
+      <div id="menu" class="fa-solid fa-bars"></div>
+      <div class="container"></div>
+      <div class="close"></div>
+    </header>
+
+
+    <nav class="side-bar">
+      <div class="sidebar-link active">
+        <i class="fa-solid fa-stethoscope"></i>
+        <div>Medicine</div>
+      </div>
+      <div class="sidebar-link active">
+        <i class="fa-solid fa-pills"></i>
+        <div>Biochem</div>
+      </div>
+      <div class="sidebar-link active">
+        <i class="fa-solid fa-clipboard"></i>
+        <div> Nursing</div>
+      </div>
+      <div class="sidebar-link active">
+        <i class="fa-solid fa-lungs"></i>
+        <div>Anatomy</div>
+      </div>
+      <div class="sidebar-link active">
+        <i class="fa-solid fa-heart-pulse"></i>
+        <div>Physiology</div>
+      </div>
+      <div class="sidebar-link active">
+        <i class="fa-solid fa-heart-pulse"></i>
+        <div>MLS</div>
+      </div>
+    </nav>
+
+
+
+
+    <section id="secs">
+      <div class="container">
+        <% locals.resources.map((resource)=>{ %>
+            <div class="file-container">
+              <div class="image-container">
+                <% const ext=resource.resourceUrl.slice(-3) %>
+                  <img src="./images/<%= ext %>.png" alt="pdf" >
+              </div>
+              <a href=<%= resource.resourceUrl %>><h1>Engineering mathematics 300lvl</h1></a>
+              <span class="authDetails">
+                  <div class="profileContainer">
+                    <img class="profilePic" src="./images/doc.png" >
+                    <div>
+                      <h3>colTheDeveloper</h3>
+                      <p>Mar 3</p>
+                    </div>
+                  </div>
+                  <a class="ankor" href=<%= resource.resourceUrl %>  download>
+                    <i class="fa-solid fa-download"></i>
+                  </a>
+              </span>
+            </div>
+        <% }) %>
+        
+      </div>
+    </section>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./js/home.js"></script>
+</body>
+
+</html>

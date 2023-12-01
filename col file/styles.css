@@ -1,0 +1,27 @@
+body{
+    display: flex;
+    justify-content: flex-start;
+}
+.file-container{
+    width: 300px;
+    border: 1px solid grey;
+    padding: 5px;
+    border-radius: 10px;
+}
+.image-container{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    border-radius: 5px;
+}
+.image-container>img{
+    width: 50%;
+}
+.profilePic{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}

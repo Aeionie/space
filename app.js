@@ -7,6 +7,7 @@ import userRoute from "./routes/userRoute.js"
 import resourceRoute from "./routes/resourceRoute.js"
 import cookieParser from "cookie-parser"
 import fileUpload from "express-fileupload"
+//import ejs from "ejs"
 
 
 
@@ -15,6 +16,7 @@ dotenv.config()
 
 app.use(express.json())
 app.use(cookieParser())
+//app.use('view engine',ejs)
 app.use(fileUpload({ useTempFiles: true}));
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({extended:true}))

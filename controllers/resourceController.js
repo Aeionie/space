@@ -49,6 +49,21 @@ export const getResourcesWithUserId= async(req,res,next)=>{
     }
 }
 
+export const getAllResources= async(req,res,next)=>{
+    if(!req.cookies.access_token){
+        res.redirect("/auth")
+    } 
+    try {
+        const resources= await resourceModel.find().sort({createdAt:-1})
+        //const userData= JSON.parse(localStorage.getItem("userData"))
+        const userData=JSON.parse(req.cookies.userData)
+        res.render("home.ejs", {resources,userData})
+    } catch (err) {
+        next(err)
+        
+    }
+}
+
 export const searchForResources= async(req,res,next)=>{
     try {
         const q=req.query.q

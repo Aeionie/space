@@ -1,12 +1,13 @@
 import express from "express"
-import { createResource, getResourcesByCategory, getResourcesWithUserId, searchForResources } from "../controllers/resourceController.js"
+import { createResource, getAllResources, getResourcesByCategory, getResourcesWithUserId, searchForResources } from "../controllers/resourceController.js"
 import { verifyToken } from "../middleware/verifyToken.js"
 
 const router=express.Router()
 
 router.post("/",verifyToken,createResource)
 
-router.get("/",getResourcesByCategory)
+router.get("/category",getResourcesByCategory)
+router.get("/",getAllResources)
 
 router.get("/user/:id", verifyToken,getResourcesWithUserId)
 
