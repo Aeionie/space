@@ -356,7 +356,7 @@ i:hover{
 
 #model{
   position: relative;
-  width:60%;
+  width:40%;
   height: 60%;
   background-color: white;
   border-radius: 10px;
@@ -375,6 +375,17 @@ i:hover{
   padding: 10px;
   border-radius:50%;
 
+}
+.main-form-container{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-container{
+  display: flex;
+  flex-direction: column;
 }
 /* grid ends */
 /* Footer ends */
@@ -563,6 +574,11 @@ i:hover{
 
   section .content p {
     font-size: 2rem;
+  }
+
+  #model{
+    width: 80%;
+    z-index: 10;
   }
 
   .about .container {

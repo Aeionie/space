@@ -18,6 +18,34 @@
       <div id="close">
         <h1>X</h1>
       </div>
+      <div class="main-form-container">
+        <form method="POST" action="/resources">
+            <div class="form-container">
+              <label>File</label>
+              <input type="file" name="resource"   />
+            </div>
+            <div class="form-container">
+              <label>File Name</label>
+              <input type="text" name="resourceName" placeholder="file Name"  />
+            </div>
+            <div class="form-container">
+              <label>Category</label>
+              <input type="text" name="category" placeholder="category"  />
+            </div>
+            <div class="form-container">
+
+              <label>Privacy</label>
+              <select name="privacy">
+
+                <option value="public">.....</option>
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+              </select>
+            </div>
+            <button type="submit">Upload</button>
+          
+        </form>
+      </div>
 
     </div>
 
@@ -42,8 +70,7 @@
         <div class="bell-icon"><i class="fa-solid fa-bell"></i></div>
         <div class="profile-pfp"><img src=<%= locals.userData.profilePicUrl %> alt="profile-picture"></div>
       </div>
-      <% console.log(locals) %>
-
+      
 
       <div id="menu" class="fa-solid fa-bars"></div>
       <div class="container"></div>
@@ -52,26 +79,26 @@
 
 
     <nav class="side-bar">
-      <div class="sidebar-link active">
+      <a href="/resources/category?category=medicine" class="sidebar-link active">
         <i class="fa-solid fa-stethoscope"></i>
         <div>Medicine</div>
-      </div>
-      <div class="sidebar-link active">
+      </a>
+      <a href="/resources/category?category=biochem" class="sidebar-link active">
         <i class="fa-solid fa-pills"></i>
         <div>Biochem</div>
-      </div>
-      <div class="sidebar-link active">
+      </a>
+      <a href="/resources/category?category=nursing" class="sidebar-link active">
         <i class="fa-solid fa-clipboard"></i>
         <div> Nursing</div>
-      </div>
-      <div class="sidebar-link active">
+      </a>
+      <a href="/resources/category?category=anatomy" class="sidebar-link active">
         <i class="fa-solid fa-lungs"></i>
         <div>Anatomy</div>
-      </div>
-      <div class="sidebar-link active">
+      </a>
+      <a href="/resources/category?category=anatomy" class="sidebar-link active">
         <i class="fa-solid fa-heart-pulse"></i>
         <div>Physiology</div>
-      </div>
+      </a>
       <div class="sidebar-link active">
         <i class="fa-solid fa-heart-pulse"></i>
         <div>MLS</div>
@@ -89,7 +116,7 @@
                 <% const ext=resource.resourceUrl.slice(-3) %>
                   <img src="./images/<%= ext %>.png" alt="pdf" >
               </div>
-              <a href=<%= resource.resourceUrl %>><h1>Engineering mathematics 300lvl</h1></a>
+              <a href=<%= resource.resourceUrl %>><h1><%= resource.resourceName %></h1></a>
               <span class="authDetails">
                   <div class="profileContainer">
                     <img class="profilePic" src="./images/doc.png" >

@@ -3,7 +3,9 @@ import upload from "../middleware/cloudinary.js"
 
 export const  createResource=async(req,res,next)=>{
     try {
+        console.log(req.body)
         if (!req.files) return res.send('Please upload a document!');
+
 
         const {resource}= req.files
 
@@ -32,7 +34,8 @@ export const getResourcesByCategory=async(req,res,next)=>{
     const category= req.query.category
     try {
         const resources= await resourceModel.find({category}).sort({createdAt:-1})
-        res.status(200).json(resources)
+        const userData=JSON.parse(req.cookies.userData)
+        res.render("home.ejs", {resources,userData})
     } catch (err) {
         next(err)
     }

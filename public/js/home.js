@@ -1,7 +1,7 @@
 // Get the menu button and the sidebar
 const menuToggle = document.getElementById('menu');
 const navbar = document.querySelector('.side-bar');
-const closeBtn= document.querySelector(".close")
+const closeBtn= document.querySelector("#close")
 const addResources= document.querySelector(".add-resources")
 const postPage=document.querySelector("#post-page")
 
@@ -18,7 +18,8 @@ addResources.addEventListener("click",()=>{
   postPage.style.display="flex"
 
 })
-postPage.addEventListener("click",()=>{
+closeBtn.addEventListener("click",()=>{
+  console.log("i just got click")
   postPage.style.display="none"
 
 })
